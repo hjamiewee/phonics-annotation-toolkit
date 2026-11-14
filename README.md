@@ -64,6 +64,12 @@ See the [data model](docs/en/data_model.md) for details and the [glossary](docs/
 
 Inputs, rules, and commands for each step are in the [pipeline docs](docs/en/workflow.md).
 
+## Analysis: decodability
+
+For each lesson, the toolkit measures what share of the passage words can be read with only the GPCs taught so far, and finds the GPCs that block the rest.
+In the example curriculum the sh lesson is only 13% decodable, because short i (`ship`, `fish`, `dish`) has not been taught yet.
+That is a sequencing gap found from data. See [decodability analysis](docs/en/decodability.md).
+
 ## Repository layout
 
 ```
@@ -79,7 +85,7 @@ Inputs, rules, and commands for each step are in the [pipeline docs](docs/en/wor
 ├── registry/              # Frozen ID registries (sound numbers, recording IDs)
 ├── src/phonics_toolkit/   # Pipeline code
 ├── tests/                 # Unit tests and reproduction check (snapshots/)
-└── analysis/              # Analysis notebooks
+└── analysis/              # Analysis assumptions (baseline GPC list)
 ```
 
 ## Progress
@@ -89,7 +95,7 @@ Inputs, rules, and commands for each step are in the [pipeline docs](docs/en/wor
 - [x] GPC decomposition, sound numbers, Aud_ID (sound axis)
 - [x] Lesson target judgment
 - [x] Asset list generation
-- [ ] Decodability analysis
+- [x] Decodability analysis
 
 ## Running
 
@@ -102,4 +108,7 @@ python -m pytest
 # Whole pipeline: preview the summary, then write the outputs (out/)
 python -m phonics_toolkit
 python -m phonics_toolkit --write
+
+# Decodability analysis
+python -m phonics_toolkit.decodability
 ```

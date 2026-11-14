@@ -61,6 +61,12 @@
 
 단계별 입력·규칙·명령은 [처리 단계](docs/ko/workflow.md)에 있습니다.
 
+## 분석: 해독 가능성
+
+레슨마다 "지금까지 배운 GPC만으로 지문 낱말의 몇 %를 읽을 수 있는가"를 재고, 읽지 못하게 막는 GPC를 찾습니다.
+예시 커리큘럼에서는 sh 레슨의 해독 가능 비율이 13%에 그쳤는데, 짧은 i(`ship`, `fish`, `dish`)를 아직 가르치지 않은 것이 원인이었습니다.
+레슨 순서의 빈틈을 데이터로 찾아내는 예입니다. 자세한 내용은 [해독 가능성 분석](docs/ko/decodability.md)에 있습니다.
+
 ## 저장소 구성
 
 ```
@@ -76,7 +82,7 @@
 ├── registry/              # 번호 고정 대장 (소리 번호, 녹음 번호)
 ├── src/phonics_toolkit/   # 파이프라인 코드
 ├── tests/                 # 단위 테스트, 재현 검사 (snapshots/)
-└── analysis/              # 분석 노트북
+└── analysis/              # 분석 가정 (기초 GPC 목록)
 ```
 
 ## 진행 상황
@@ -86,7 +92,7 @@
 - [x] GPC 분해, 소리 번호, Aud_ID (소리 축)
 - [x] 레슨 타깃 판정
 - [x] 에셋 목록 생성
-- [ ] 해독 가능성(decodability) 분석
+- [x] 해독 가능성(decodability) 분석
 
 ## 실행
 
@@ -99,4 +105,7 @@ python -m pytest
 # 전체 단계 실행: 요약 보기 → 결과 파일 쓰기 (out/)
 python -m phonics_toolkit
 python -m phonics_toolkit --write
+
+# 해독 가능성 분석
+python -m phonics_toolkit.decodability
 ```
