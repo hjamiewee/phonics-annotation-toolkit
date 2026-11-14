@@ -53,14 +53,16 @@ See the [data model](docs/en/data_model.md) for details and the [glossary](docs/
 
 | Step | What it does | Status |
 |---|---|---|
-| 1 | Assign Line_IDs | Planned |
-| 2 | Tokenize, merge phrases | Planned |
-| 3 | Part of speech, lemma, sense (context decision files + defaults) | Planned |
+| 1 | Assign Line_IDs | Done |
+| 2 | Tokenize, merge phrases | Done |
+| 3 | Part of speech, lemma, sense (context decision files + defaults) | Done |
 | 4 | GPC decomposition | Planned |
 | 4-b | Sound numbers (`a#`) with a frozen registry | Planned |
 | 5 | Lesson target judgment (main and additional) | Planned |
 | 6–8 | Word_ID, high-frequency words, inflection labels | Planned |
 | 9 | Sense dictionary, image and audio asset lists | Planned |
+
+Inputs, rules, and commands for each step are in the [pipeline docs](docs/en/workflow.md).
 
 ## Repository layout
 
@@ -70,17 +72,20 @@ See the [data model](docs/en/data_model.md) for details and the [glossary](docs/
 │   ├── glossary.md        # Korean–English glossary
 │   ├── en/                # English docs
 │   └── ko/                # Korean docs
-├── data/                  # Example input (lessons, passage lines)
+├── data/
+│   ├── lessons.tsv, lines.tsv   # Example input (lessons, passage lines)
+│   ├── decisions/         # Human judgments: phrases, defaults, context decisions
+│   └── lexicon/           # Sense dictionary
 ├── registry/              # Frozen ID registries (sound numbers, recording IDs)
 ├── src/phonics_toolkit/   # Pipeline code
-├── tests/                 # Reproduction and regression tests
+├── tests/                 # Unit tests and reproduction check (snapshots/)
 └── analysis/              # Analysis notebooks
 ```
 
 ## Progress
 
 - [x] Data model docs, glossary, example data
-- [ ] Tokenization and sense judgment (meaning axis)
+- [x] Line_IDs, tokenization, sense judgment (meaning axis)
 - [ ] GPC decomposition, sound numbers, Aud_ID (sound axis)
 - [ ] Lesson target judgment
 - [ ] Asset list generation
@@ -93,4 +98,8 @@ python -m venv venv
 source venv/bin/activate
 pip install -e ".[dev]"
 python -m pytest
+
+# Steps 2–3: preview the summary, then write the outputs
+python -m phonics_toolkit.words
+python -m phonics_toolkit.words --write
 ```

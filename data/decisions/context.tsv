@@ -1,0 +1,7 @@
+line_id	seq	token	pos	lemma	s#	reason
+L00009	3	is	v	be	2	location: is on the log
+L00014	3	is	v	be	2	location: is at the shop
+L00017	4	in	prep	in	2	open space: in the sun
+L00018	4	in	prep	in	2	ground/nature: in the mud
+L00023	3	took	v	take	2	take a bow = perform a greeting
+L00023	5	bow	n	bow	2	greeting, not ribbon (took a bow)

@@ -1,0 +1,55 @@
+p.Lemma-s	pos	lemma	s#	meaning_ko	meaning_en
+det.a-1	det	a	1	(부정관사)	(indefinite article)
+det.the-1	det	the	1	(정관사)	(definite article)
+pron.I-1	pron	I	1	나	I, me
+pron.she-1	pron	she	1	그녀	she
+propn.Pam-1	propn	Pam	1	(이름)	(name)
+propn.Tom-1	propn	Tom	1	(이름)	(name)
+n.cat-1	n	cat	1	고양이	cat
+n.map-1	n	map	1	지도	map
+n.bag-1	n	bag	1	가방	bag
+n.mat-1	n	mat	1	매트	mat
+n.pot-1	n	pot	1	냄비	pot
+n.fox-1	n	fox	1	여우	fox
+n.log-1	n	log	1	통나무	log
+n.ship-1	n	ship	1	배	ship
+n.fish-1	n	fish	1	물고기	fish
+n.dish-1	n	dish	1	접시	dish
+n.shop-1	n	shop	1	가게	shop
+n.dog-1	n	dog	1	개	dog
+n.sun-1	n	sun	1	해, 햇볕	sun, sunshine
+n.mud-1	n	mud	1	진흙	mud
+n.book-1	n	book	1	책	book
+n.leaf-1	n	leaf	1	나뭇잎	leaf
+n.sea-1	n	sea	1	바다	sea
+n.actor-1	n	actor	1	배우	actor
+n.bow-1	n	bow	1	리본, 나비매듭	ribbon, looped knot
+n.bow-2	n	bow	2	(고개 숙여 하는) 인사	a bending greeting
+n.hot dog-1	n	hot dog	1	핫도그	hot dog
+adj.red-1	adj	red	1	빨간	red
+adj.hot-1	adj	hot	1	뜨거운	hot
+adv.yesterday-1	adv	yesterday	1	어제	yesterday
+adv.too-1	adv	too	1	~도, 또한	also
+adv.every day-1	adv	every day	1	매일	every day
+num.two-1	num	two	1	둘	two
+aux.can-1	aux	can	1	~할 수 있다	can, be able to
+v.be-1	v	be	1	~이다	to be (linking)
+v.be-2	v	be	2	(어디에) 있다	to be (location)
+v.have-1	v	have	1	가지다, 있다	to have
+v.sit-1	v	sit	1	앉다	to sit
+v.nap-1	v	nap	1	낮잠 자다	to nap
+v.dig-1	v	dig	1	(땅을) 파다	to dig
+v.get-1	v	get	1	얻다, 구하다	to get
+v.eat-1	v	eat	1	먹다	to eat
+v.go-1	v	go	1	가다	to go
+v.read-1	v	read	1	읽다	to read
+v.fall-1	v	fall	1	떨어지다	to fall
+v.tie-1	v	tie	1	묶다	to tie
+v.take-1	v	take	1	가지고 가다	to take
+v.take-2	v	take	2	(동작을) 하다	to perform (an action)
+prep.on-1	prep	on	1	~위에	on (top of)
+prep.in-1	prep	in	1	~안에	inside
+prep.in-2	prep	in	2	~에 (넓은 곳·자연)	in (open space, nature)
+prep.at-1	prep	at	1	~에	at
+prep.to-1	prep	to	1	~에, ~로	to (direction)
+prep.into-1	prep	into	1	~안으로	into

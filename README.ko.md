@@ -50,14 +50,16 @@
 
 | 단계 | 하는 일 | 상태 |
 |---|---|---|
-| 1 | Line_ID 부여 | 예정 |
-| 2 | 토큰화, 구(phrase) 병합 | 예정 |
-| 3 | 품사·원형·뜻 판정 (문맥 결정 파일 + 대표값) | 예정 |
+| 1 | Line_ID 부여 | 완료 |
+| 2 | 토큰화, 구(phrase) 병합 | 완료 |
+| 3 | 품사·원형·뜻 판정 (문맥 결정 파일 + 대표값) | 완료 |
 | 4 | GPC 분해 | 예정 |
 | 4-b | 소리 번호(`a#`) 부여, 번호 고정 대장 | 예정 |
 | 5 | 레슨 타깃 판정 (메인·추가) | 예정 |
 | 6~8 | Word_ID, 고빈도어, 굴절형 표시 | 예정 |
 | 9 | 뜻 사전·이미지·음성 에셋 목록 생성 | 예정 |
+
+단계별 입력·규칙·명령은 [처리 단계](docs/ko/workflow.md)에 있습니다.
 
 ## 저장소 구성
 
@@ -67,17 +69,20 @@
 │   ├── glossary.md        # 한국어·영어 용어표
 │   ├── en/                # 영어 문서
 │   └── ko/                # 한국어 문서
-├── data/                  # 예시 입력 (레슨, 지문 줄)
+├── data/
+│   ├── lessons.tsv, lines.tsv   # 예시 입력 (레슨, 지문 줄)
+│   ├── decisions/         # 사람 판정: 구 목록, 대표값, 문맥 판정
+│   └── lexicon/           # 뜻 사전
 ├── registry/              # 번호 고정 대장 (소리 번호, 녹음 번호)
 ├── src/phonics_toolkit/   # 파이프라인 코드
-├── tests/                 # 재현 검사·회귀 테스트
+├── tests/                 # 단위 테스트, 재현 검사 (snapshots/)
 └── analysis/              # 분석 노트북
 ```
 
 ## 진행 상황
 
 - [x] 데이터 모델 문서, 용어표, 예시 데이터
-- [ ] 토큰화와 뜻 판정 (뜻 축)
+- [x] Line_ID 부여, 토큰화, 뜻 판정 (뜻 축)
 - [ ] GPC 분해, 소리 번호, Aud_ID (소리 축)
 - [ ] 레슨 타깃 판정
 - [ ] 에셋 목록 생성
@@ -90,4 +95,8 @@ python -m venv venv
 source venv/bin/activate
 pip install -e ".[dev]"
 python -m pytest
+
+# 2~3단계 실행: 요약 보기 → 결과 파일 쓰기
+python -m phonics_toolkit.words
+python -m phonics_toolkit.words --write
 ```
