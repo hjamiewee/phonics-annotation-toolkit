@@ -1,0 +1,27 @@
+line_id	lesson_id	activity	line_num	line_type	text
+L00001	DEMO.A.U1L1	Word Study	1	word	cat
+L00002	DEMO.A.U1L1	Word Study	2	word	map
+L00003	DEMO.A.U1L1	Word Study	3	word	bag
+L00004	DEMO.A.U1L1	Read	1	sentence	The cat sat on a mat.
+L00005	DEMO.A.U1L1	Read	2	sentence	Pam has a red bag.
+L00006	DEMO.A.U1L2	Word Study	1	word	pot
+L00007	DEMO.A.U1L2	Word Study	2	word	fox
+L00008	DEMO.A.U1L2	Word Study	3	word	log
+L00009	DEMO.A.U1L2	Read	1	sentence	The fox is on the log.
+L00010	DEMO.A.U1L2	Read	2	sentence	Tom got a hot pot.
+L00011	DEMO.A.U2L1	Word Study	1	word	ship
+L00012	DEMO.A.U2L1	Word Study	2	word	fish
+L00013	DEMO.A.U2L1	Read	1	sentence	She has a fish in a dish.
+L00014	DEMO.A.U2L1	Read	2	sentence	The ship is at the shop.
+L00015	DEMO.A.U2L2	Word Study	1	word	cats
+L00016	DEMO.A.U2L2	Word Study	2	word	dogs
+L00017	DEMO.A.U2L2	Read	1	sentence	Two cats nap in the sun.
+L00018	DEMO.A.U2L2	Read	2	sentence	The dogs dig in the mud.
+L00019	DEMO.A.U3L1	Read	1	sentence	I read a book every day.
+L00020	DEMO.A.U3L1	Read	2	sentence	Yesterday I read a book.
+L00021	DEMO.A.U3L1	Read	3	sentence	A leaf fell into the sea.
+L00022	DEMO.A.U3L1	Story	1	sentence	She can tie a bow.
+L00023	DEMO.A.U3L1	Story	2	sentence	The actor took a bow.
+L00024	DEMO.A.U3L2	Word Study	1	phrase	to · too · two
+L00025	DEMO.A.U3L2	Read	1	sentence	I go to the sea.
+L00026	DEMO.A.U3L2	Read	2	sentence	I have two cats, too.

@@ -1,0 +1,7 @@
+lesson_id	level	unit	lesson	title	gpc	environment	morph	lexical	gpc_add	environment_add	morph_add	lexical_add
+DEMO.A.U1L1	A	1	1	Short a	a:æ	medial						
+DEMO.A.U1L2	A	1	2	Short o	o:ɑ	medial						
+DEMO.A.U2L1	A	2	1	Digraph sh	sh:ʃ							
+DEMO.A.U2L2	A	2	2	Plural -s	s:s, s:z	final	plural		a:æ	medial		
+DEMO.A.U3L1	A	3	1	Vowel team ea	ea:i							
+DEMO.A.U3L2	A	3	2	Homophones				homophone				

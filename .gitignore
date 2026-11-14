@@ -1,0 +1,13 @@
+# --- python ---
+venv/
+.venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+
+# --- 파이프라인 산출물 ---
+out/
+
+# --- OS ---
+.DS_Store
