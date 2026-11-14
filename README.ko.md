@@ -53,11 +53,11 @@
 | 1 | Line_ID 부여 | 완료 |
 | 2 | 토큰화, 구(phrase) 병합 | 완료 |
 | 3 | 품사·원형·뜻 판정 (문맥 결정 파일 + 대표값) | 완료 |
-| 4 | GPC 분해 | 예정 |
-| 4-b | 소리 번호(`a#`) 부여, 번호 고정 대장 | 예정 |
-| 5 | 레슨 타깃 판정 (메인·추가) | 예정 |
-| 6~8 | Word_ID, 고빈도어, 굴절형 표시 | 예정 |
-| 9 | 뜻 사전·이미지·음성 에셋 목록 생성 | 예정 |
+| 4 | GPC 분해 | 완료 |
+| 4-b | 소리 번호(`a#`) 부여, 번호 고정 대장 | 완료 |
+| 5 | 레슨 타깃 판정 (메인·추가) | 완료 |
+| 6~8 | Word_ID, 고빈도어, 굴절형 표시 | 완료 |
+| 9 | 뜻 사전·이미지·음성 에셋 목록 생성 | 완료 |
 
 단계별 입력·규칙·명령은 [처리 단계](docs/ko/workflow.md)에 있습니다.
 
@@ -83,9 +83,9 @@
 
 - [x] 데이터 모델 문서, 용어표, 예시 데이터
 - [x] Line_ID 부여, 토큰화, 뜻 판정 (뜻 축)
-- [ ] GPC 분해, 소리 번호, Aud_ID (소리 축)
-- [ ] 레슨 타깃 판정
-- [ ] 에셋 목록 생성
+- [x] GPC 분해, 소리 번호, Aud_ID (소리 축)
+- [x] 레슨 타깃 판정
+- [x] 에셋 목록 생성
 - [ ] 해독 가능성(decodability) 분석
 
 ## 실행
@@ -96,7 +96,7 @@ source venv/bin/activate
 pip install -e ".[dev]"
 python -m pytest
 
-# 2~3단계 실행: 요약 보기 → 결과 파일 쓰기
-python -m phonics_toolkit.words
-python -m phonics_toolkit.words --write
+# 전체 단계 실행: 요약 보기 → 결과 파일 쓰기 (out/)
+python -m phonics_toolkit
+python -m phonics_toolkit --write
 ```

@@ -56,11 +56,11 @@ See the [data model](docs/en/data_model.md) for details and the [glossary](docs/
 | 1 | Assign Line_IDs | Done |
 | 2 | Tokenize, merge phrases | Done |
 | 3 | Part of speech, lemma, sense (context decision files + defaults) | Done |
-| 4 | GPC decomposition | Planned |
-| 4-b | Sound numbers (`a#`) with a frozen registry | Planned |
-| 5 | Lesson target judgment (main and additional) | Planned |
-| 6–8 | Word_ID, high-frequency words, inflection labels | Planned |
-| 9 | Sense dictionary, image and audio asset lists | Planned |
+| 4 | GPC decomposition | Done |
+| 4-b | Sound numbers (`a#`) with a frozen registry | Done |
+| 5 | Lesson target judgment (main and additional) | Done |
+| 6–8 | Word_ID, high-frequency words, inflection labels | Done |
+| 9 | Sense dictionary, image and audio asset lists | Done |
 
 Inputs, rules, and commands for each step are in the [pipeline docs](docs/en/workflow.md).
 
@@ -86,9 +86,9 @@ Inputs, rules, and commands for each step are in the [pipeline docs](docs/en/wor
 
 - [x] Data model docs, glossary, example data
 - [x] Line_IDs, tokenization, sense judgment (meaning axis)
-- [ ] GPC decomposition, sound numbers, Aud_ID (sound axis)
-- [ ] Lesson target judgment
-- [ ] Asset list generation
+- [x] GPC decomposition, sound numbers, Aud_ID (sound axis)
+- [x] Lesson target judgment
+- [x] Asset list generation
 - [ ] Decodability analysis
 
 ## Running
@@ -99,7 +99,7 @@ source venv/bin/activate
 pip install -e ".[dev]"
 python -m pytest
 
-# Steps 2–3: preview the summary, then write the outputs
-python -m phonics_toolkit.words
-python -m phonics_toolkit.words --write
+# Whole pipeline: preview the summary, then write the outputs (out/)
+python -m phonics_toolkit
+python -m phonics_toolkit --write
 ```

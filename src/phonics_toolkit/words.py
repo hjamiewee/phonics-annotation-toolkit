@@ -3,38 +3,27 @@
 Reads passage lines, tokenizes them, attaches a sense to every token, and
 produces two tables:
 
-* ``words.tsv``      one row per word occurrence, keyed by ``(Line_ID, Seq)``
-* ``word_sense.tsv`` one row per sense actually used, with the tokens that use it
+* Word rows        one row per word occurrence, keyed by ``(Line_ID, Seq)``
+* sense view       one row per sense actually used, with the tokens that use it
 
-Usage:
-    python -m phonics_toolkit.words                    # preview a summary
-    python -m phonics_toolkit.words --write            # write out/words.tsv, out/word_sense.tsv
-    python -m phonics_toolkit.words --update-snapshot  # accept the current result as the new snapshot
+The sound axis, targets, and assets are added on top of these rows by
+``pipeline.py``; run everything with ``python -m phonics_toolkit``.
 """
 
 from __future__ import annotations
 
-import argparse
 from collections import Counter, defaultdict
 from dataclasses import dataclass, field
 from pathlib import Path
 
 from .sense import SOURCE_CONTEXT, UnknownSenseError, load_context, load_defaults, load_senses, resolve
-from .store import DATA_DIR, REPO_ROOT, read_table, write_table
+from .store import DATA_DIR, read_table
 from .tokens import load_phrases, tokenize_line
 
-# 결정 파일·사전 위치
-DECISIONS_DIR = DATA_DIR / "decisions"
-LEXICON_DIR = DATA_DIR / "lexicon"
-# 산출물 위치 (git 에 올리지 않는다)
-OUT_DIR = REPO_ROOT / "out"
-# 재현 검사용 기준 결과 (git 에 올려 판정 변화를 diff 로 본다)
-SNAPSHOT = REPO_ROOT / "tests" / "snapshots" / "words.tsv"
-
-# Word 표의 열 순서
+# 뜻 축이 채우는 Word 열
 WORD_COLUMNS = [
-    "line_id", "seq", "token", "p.Token", "p.Lemma-s",
-    "pos", "lemma", "s#", "meaning_ko", "meaning_en", "source",
+    "line_id", "lesson_id", "seq", "token", "p.Token", "p.Lemma-s",
+    "pos", "lemma", "s#", "meaning_ko", "meaning_en", "sense_source",
 ]
 # 뜻 사전 보기의 열 순서
 SENSE_COLUMNS = ["p.Lemma-s", "tokens", "meaning_ko", "meaning_en", "count"]
@@ -90,6 +79,7 @@ def build_words(data_dir: Path = DATA_DIR) -> WordBuild:
             s = senses[key]
             build.rows.append({
                 "line_id": line["line_id"],
+                "lesson_id": line["lesson_id"],
                 "seq": str(seq),
                 "token": token,
                 "p.Token": p_token(s.pos, token, s.lemma),
@@ -99,7 +89,7 @@ def build_words(data_dir: Path = DATA_DIR) -> WordBuild:
                 "s#": str(s.s),
                 "meaning_ko": s.meaning_ko,
                 "meaning_en": s.meaning_en,
-                "source": source,
+                "sense_source": source,
             })
 
     # 어느 낱말에도 닿지 않은 문맥 판정이 있으면 줄이 지워졌거나 Seq 가 밀린 것
@@ -128,32 +118,3 @@ def sense_view(rows: list[dict[str, str]]) -> list[dict[str, str]]:
         }
         for key in sorted(tokens)
     ]
-
-
-def main() -> None:
-    parser = argparse.ArgumentParser(description="Build the Word table and sense view.")
-    parser.add_argument("--write", action="store_true", help="write out/words.tsv and out/word_sense.tsv")
-    parser.add_argument("--update-snapshot", action="store_true", help="overwrite tests/snapshots/words.tsv")
-    args = parser.parse_args()
-
-    build = build_words()
-    by_source = Counter(r["source"] for r in build.rows)
-    # 요약: 토큰 수 · 출처별 수 · 미해결
-    print(f"tokens: {len(build.rows) + len(build.unresolved)}  "
-          f"context: {by_source['context']}  default: {by_source['default']}  "
-          f"unresolved: {len(build.unresolved)}")
-    for u in build.unresolved:
-        print(f"  unresolved  {u['line_id']} seq {u['seq']}  {u['token']!r}")
-
-    if args.write:
-        write_table(OUT_DIR / "words.tsv", build.rows, WORD_COLUMNS)
-        write_table(OUT_DIR / "word_sense.tsv", sense_view(build.rows), SENSE_COLUMNS)
-        print("written: out/words.tsv, out/word_sense.tsv")
-    if args.update_snapshot:
-        # 판정을 바꾼 뒤 결과를 확인했을 때만 기준을 새로 찍는다
-        write_table(SNAPSHOT, build.rows, WORD_COLUMNS)
-        print(f"snapshot updated: {SNAPSHOT.relative_to(REPO_ROOT)}")
-
-
-if __name__ == "__main__":
-    main()

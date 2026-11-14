@@ -9,6 +9,14 @@
 - **입력은 `data/`, 산출물은 `out/`.** `out/`은 git에 올리지 않고, 언제든 입력에서 다시 만들 수 있습니다.
 - **재현 검사.** 결과를 `tests/snapshots/`의 기준과 비교해, 판정이 바뀌면 diff로 드러나게 합니다.
 
+## 실행
+
+```bash
+python -m phonics_toolkit                    # 전체 단계를 돌려 요약과 미해결 목록만 보기
+python -m phonics_toolkit --write            # out/*.tsv 쓰기 + 대장에 새 번호 붙이기
+python -m phonics_toolkit --update-snapshot  # 판정 변경을 확인한 뒤 기준 결과 갱신
+```
+
 ## 입력 파일
 
 | 파일 | 내용 | 누가 고치나 |
@@ -19,6 +27,11 @@
 | `data/decisions/defaults.tsv` | 낱말 표기별 대표 뜻 | 사람 |
 | `data/decisions/context.tsv` | 문맥 키 `(Line_ID, Seq)`별 판정과 근거 | 사람 |
 | `data/lexicon/senses.tsv` | 뜻 사전: `p.Lemma-s`, 한국어·영어 뜻 | 사람 |
+| `data/lexicon/gpc.tsv` | 낱말별·발음별 GPC 분해, 기본 발음 표시 | 사람 |
+| `data/decisions/sound_rules.tsv` | 자리 규칙(`Line_ID:Seq`)·뜻 규칙(`p.Lemma-s`)으로 고르는 발음 | 사람 |
+| `data/lexicon/irregular.tsv`, `data/decisions/inflection_context.tsv` | 불규칙형 목록, 문맥별 굴절 판정 | 사람 |
+| `data/lexicon/hfw.tsv` | 고빈도어 목록 | 사람 |
+| `registry/*.tsv` | 번호 고정 대장: 소리 번호, 녹음 번호, Word_ID | 파이프라인 (뒤에 붙이기만) |
 
 ## 1단계: Line_ID 부여
 
@@ -51,12 +64,6 @@ python -m phonics_toolkit.ids --write    # data/lines.tsv 에 반영
 | 3 | 대표값, 소문자로 | 문장 첫머리 `The` → `det.the-1` |
 | 4 | 없음 → **미해결** | 추측하지 않고 목록으로 보여줍니다 |
 
-```bash
-python -m phonics_toolkit.words                    # 요약과 미해결 목록
-python -m phonics_toolkit.words --write            # out/words.tsv, out/word_sense.tsv
-python -m phonics_toolkit.words --update-snapshot  # 기준 결과 갱신
-```
-
 ### 안전장치
 
 - **오래된 판정 감지**: 문맥 판정에는 판정할 때의 낱말(`token`)을 함께 적습니다. 줄이 고쳐져 그 자리에 다른 낱말이 오면 실행을 멈춥니다. 엉뚱한 낱말에 판정이 붙는 것을 막기 위해서입니다.
@@ -67,17 +74,62 @@ python -m phonics_toolkit.words --update-snapshot  # 기준 결과 갱신
 
 | 파일 | 행 단위 | 주요 열 |
 |---|---|---|
-| `out/words.tsv` | 낱말 출현 하나 | `line_id`, `seq`, `token`, `p.Token`, `p.Lemma-s`, 뜻, `source` |
+| `out/words.tsv` | 낱말 출현 하나 | `line_id`, `seq`, `token`, `p.Token`, `p.Lemma-s`, 뜻, `sense_source` |
 | `out/word_sense.tsv` | 쓰인 뜻 하나 | `p.Lemma-s`, 그 뜻을 쓰는 표면형(`cat, cats`), 뜻, 횟수 |
 
-`source`는 판정의 출처(`context` 또는 `default`)입니다. 사람이 검토할 때 문맥 판정이 붙은 자리만 골라 볼 수 있습니다.
+`sense_source`는 뜻 판정의 출처(`context` 또는 `default`)입니다. 사람이 검토할 때 문맥 판정이 붙은 자리만 골라 볼 수 있습니다.
 
-## 4단계 이후 (예정)
+## 4단계: GPC 분해
 
-| 단계 | 하는 일 |
-|---|---|
-| 4 | GPC 분해 (소리 축) |
-| 4-b | 소리 번호 `a#`, 번호 고정 대장, Aud_ID |
-| 5 | 레슨 타깃 판정 |
-| 6~8 | Word_ID, 고빈도어, 굴절형 |
-| 9 | 이미지·음성 에셋 목록 |
+- `gpc.tsv`에 낱말(소문자)마다 발음 하나당 한 줄씩 분해를 적습니다. `글자:소리`를 공백으로, 음절은 `|`로 나눕니다.
+  - `read` → `r:r ea:i d:d`(기본), `r:r ea:ɛ d:d`
+  - `ate` → `a:eɪ t:t e:` (묵음 e는 소리를 비웁니다)
+  - 구도 한 토큰이므로 분해합니다: `hot dog` → `h:h o:ɑ t:t | d:d o:ɔ g:g`
+- 읽을 때 검사합니다.
+  - 글자를 이으면 낱말 철자가 돼야 합니다 (`c:k a:æ t:t`는 `cut`의 분해가 될 수 없습니다).
+  - 음절마다 모음 소리가 정확히 하나여야 합니다.
+  - 같은 낱말에 같은 발음을 두 번 분해할 수 없고, 발음이 여럿이면 기본을 하나 표시해야 합니다.
+- 각 GPC에 음절 번호, 역할(모음·자음·묵음), 위치(어두·어중·어말)를 계산해 붙입니다. 위치는 소리가 있는 GPC만으로 정하므로 `ate`의 `t`는 어말입니다.
+
+## 4-b단계: 소리 번호와 녹음 번호
+
+출현 하나가 어떤 발음인지는 아래 순서로 정합니다.
+
+| 순서 | 규칙 | 예 |
+|---|---|---|
+| 1 | 자리 규칙 `Line_ID:Seq` | `Yesterday I read`의 `read` → /rɛd/ |
+| 2 | 뜻 규칙 `p.Lemma-s` | `n.bow-2`(인사) → /baʊ/ |
+| 3 | 낱말의 기본 발음 | `bow` → /boʊ/ |
+
+- **`a#`(소리 번호)**: `registry/sound_registry.tsv`에서 (낱말, 발음)의 번호를 찾습니다. 처음 보는 발음이면 그 낱말의 최댓값 + 1을 받고 대장 뒤에 붙습니다. 쓰이지 않게 된 번호도 지우거나 다시 쓰지 않습니다. `Token-a` = `낱말-a#`입니다.
+- **Aud_ID(녹음 번호)**: `registry/aud_id.tsv`에서 발음 문자열로 번호를 찾습니다. 철자가 달라도 발음이 같으면 같은 녹음입니다(`to`·`too`·`two` → 하나, 과거형 `read`·`red` → 하나).
+
+## 5단계: 레슨 타깃 판정
+
+레슨의 네 축(`gpc`, `environment`, `morph`, `lexical`)으로 레슨 안의 낱말마다 Y·N을 정합니다. 메인 축은 `target`, `_add` 축은 `add_target` 열에 들어갑니다.
+
+- **파닉스 경로**: 채워진 축이 모두 맞아야 합니다. GPC는 정해진 위치에 있어야 하고(`on`은 o가 어두라서 어중 레슨에서 N), 형태 축은 AND로 묶습니다(복수형 레슨에서 `has`는 /z/로 끝나도 복수형이 아니라 N).
+- **어휘 경로**: `homophone`이면 같은 레슨에 철자가 다르고 발음이 같은 낱말이 있을 때 Y입니다.
+- 두 경로 중 하나라도 맞으면 Y입니다. 축이 모두 빈 레슨은 판정하지 않고 비워 둡니다.
+- 소리 축 판정이 타깃에 그대로 반영됩니다. `ea:i` 레슨에서 현재형 `read`는 Y, 과거형 `read`(/rɛd/)는 N입니다.
+
+## 6~8단계: Word_ID, 고빈도어, 굴절형
+
+- **굴절형(8)**: 문맥 판정 → 불규칙형 목록 → 규칙 어미(원형과 비교) 순서입니다. 형태 축 판정에 쓰이므로 실제로는 5단계보다 먼저 계산합니다.
+- **고빈도어(7)**: `hfw.tsv`의 낱말과 표기(대소문자 무시)가 같으면 Y입니다.
+- **Word_ID(6)**: `registry/word_id.tsv`에서 `(Line_ID, Seq)`의 번호를 찾고, 없으면 최댓값 + 1을 줍니다. 대장의 낱말과 지금 낱말이 다르면 멈춥니다.
+
+## 9단계: 산출물
+
+| 파일 | 행 단위 | 축 |
+|---|---|---|
+| `out/words.tsv` | 낱말 출현 하나 (모든 판정 포함) | 둘 다 |
+| `out/word_gpc.tsv` | 쓰인 소리 키의 GPC 하나 | 소리 |
+| `out/word_sense.tsv` | 쓰인 뜻 하나 | 뜻 |
+| `out/img_assets.tsv` | 이미지 하나: 뜻 + 형태 꼬리표(`.pl`·`.cmp`·`.sup`), 기능어 제외 | 뜻 |
+| `out/aud_assets.tsv` | 녹음 하나: 발음, 음절 수, 그 발음을 쓰는 소리 키·표면형 | 소리 |
+
+## 대장(registry) 다루기
+
+- 데이터를 추가한 뒤 미리보기에서 `new registry rows`가 0이 아니면, `--write`로 대장에 번호를 붙이고 대장 파일을 커밋합니다.
+- 테스트 `test_registries_are_up_to_date`는 커밋된 대장이 데이터에 필요한 번호를 모두 갖고 있는지 확인합니다. 번호가 실행할 때마다 달라지지 않는다는 보증입니다.

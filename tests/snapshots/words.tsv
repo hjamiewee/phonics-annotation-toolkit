@@ -1,101 +1,101 @@
-line_id	seq	token	p.Token	p.Lemma-s	pos	lemma	s#	meaning_ko	meaning_en	source
-L00001	1	cat	n.cat	n.cat-1	n	cat	1	고양이	cat	default
-L00002	1	map	n.map	n.map-1	n	map	1	지도	map	default
-L00003	1	bag	n.bag	n.bag-1	n	bag	1	가방	bag	default
-L00004	1	The	det.the	det.the-1	det	the	1	(정관사)	(definite article)	default
-L00004	2	cat	n.cat	n.cat-1	n	cat	1	고양이	cat	default
-L00004	3	sat	v.sat	v.sit-1	v	sit	1	앉다	to sit	default
-L00004	4	on	prep.on	prep.on-1	prep	on	1	~위에	on (top of)	default
-L00004	5	a	det.a	det.a-1	det	a	1	(부정관사)	(indefinite article)	default
-L00004	6	mat	n.mat	n.mat-1	n	mat	1	매트	mat	default
-L00005	1	Pam	propn.Pam	propn.Pam-1	propn	Pam	1	(이름)	(name)	default
-L00005	2	has	v.has	v.have-1	v	have	1	가지다, 있다	to have	default
-L00005	3	a	det.a	det.a-1	det	a	1	(부정관사)	(indefinite article)	default
-L00005	4	red	adj.red	adj.red-1	adj	red	1	빨간	red	default
-L00005	5	bag	n.bag	n.bag-1	n	bag	1	가방	bag	default
-L00006	1	pot	n.pot	n.pot-1	n	pot	1	냄비	pot	default
-L00007	1	fox	n.fox	n.fox-1	n	fox	1	여우	fox	default
-L00008	1	log	n.log	n.log-1	n	log	1	통나무	log	default
-L00009	1	The	det.the	det.the-1	det	the	1	(정관사)	(definite article)	default
-L00009	2	fox	n.fox	n.fox-1	n	fox	1	여우	fox	default
-L00009	3	is	v.is	v.be-2	v	be	2	(어디에) 있다	to be (location)	context
-L00009	4	on	prep.on	prep.on-1	prep	on	1	~위에	on (top of)	default
-L00009	5	the	det.the	det.the-1	det	the	1	(정관사)	(definite article)	default
-L00009	6	log	n.log	n.log-1	n	log	1	통나무	log	default
-L00010	1	Tom	propn.Tom	propn.Tom-1	propn	Tom	1	(이름)	(name)	default
-L00010	2	got	v.got	v.get-1	v	get	1	얻다, 구하다	to get	default
-L00010	3	a	det.a	det.a-1	det	a	1	(부정관사)	(indefinite article)	default
-L00010	4	hot	adj.hot	adj.hot-1	adj	hot	1	뜨거운	hot	default
-L00010	5	pot	n.pot	n.pot-1	n	pot	1	냄비	pot	default
-L00011	1	ship	n.ship	n.ship-1	n	ship	1	배	ship	default
-L00012	1	fish	n.fish	n.fish-1	n	fish	1	물고기	fish	default
-L00013	1	She	pron.she	pron.she-1	pron	she	1	그녀	she	default
-L00013	2	has	v.has	v.have-1	v	have	1	가지다, 있다	to have	default
-L00013	3	a	det.a	det.a-1	det	a	1	(부정관사)	(indefinite article)	default
-L00013	4	fish	n.fish	n.fish-1	n	fish	1	물고기	fish	default
-L00013	5	in	prep.in	prep.in-1	prep	in	1	~안에	inside	default
-L00013	6	a	det.a	det.a-1	det	a	1	(부정관사)	(indefinite article)	default
-L00013	7	dish	n.dish	n.dish-1	n	dish	1	접시	dish	default
-L00014	1	The	det.the	det.the-1	det	the	1	(정관사)	(definite article)	default
-L00014	2	ship	n.ship	n.ship-1	n	ship	1	배	ship	default
-L00014	3	is	v.is	v.be-2	v	be	2	(어디에) 있다	to be (location)	context
-L00014	4	at	prep.at	prep.at-1	prep	at	1	~에	at	default
-L00014	5	the	det.the	det.the-1	det	the	1	(정관사)	(definite article)	default
-L00014	6	shop	n.shop	n.shop-1	n	shop	1	가게	shop	default
-L00015	1	cats	n.cats	n.cat-1	n	cat	1	고양이	cat	default
-L00016	1	dogs	n.dogs	n.dog-1	n	dog	1	개	dog	default
-L00017	1	Two	num.two	num.two-1	num	two	1	둘	two	default
-L00017	2	cats	n.cats	n.cat-1	n	cat	1	고양이	cat	default
-L00017	3	nap	v.nap	v.nap-1	v	nap	1	낮잠 자다	to nap	default
-L00017	4	in	prep.in	prep.in-2	prep	in	2	~에 (넓은 곳·자연)	in (open space, nature)	context
-L00017	5	the	det.the	det.the-1	det	the	1	(정관사)	(definite article)	default
-L00017	6	sun	n.sun	n.sun-1	n	sun	1	해, 햇볕	sun, sunshine	default
-L00018	1	The	det.the	det.the-1	det	the	1	(정관사)	(definite article)	default
-L00018	2	dogs	n.dogs	n.dog-1	n	dog	1	개	dog	default
-L00018	3	dig	v.dig	v.dig-1	v	dig	1	(땅을) 파다	to dig	default
-L00018	4	in	prep.in	prep.in-2	prep	in	2	~에 (넓은 곳·자연)	in (open space, nature)	context
-L00018	5	the	det.the	det.the-1	det	the	1	(정관사)	(definite article)	default
-L00018	6	mud	n.mud	n.mud-1	n	mud	1	진흙	mud	default
-L00019	1	I	pron.I	pron.I-1	pron	I	1	나	I, me	default
-L00019	2	read	v.read	v.read-1	v	read	1	읽다	to read	default
-L00019	3	a	det.a	det.a-1	det	a	1	(부정관사)	(indefinite article)	default
-L00019	4	book	n.book	n.book-1	n	book	1	책	book	default
-L00019	5	every day	adv.every day	adv.every day-1	adv	every day	1	매일	every day	default
-L00020	1	Yesterday	adv.yesterday	adv.yesterday-1	adv	yesterday	1	어제	yesterday	default
-L00020	2	I	pron.I	pron.I-1	pron	I	1	나	I, me	default
-L00020	3	read	v.read	v.read-1	v	read	1	읽다	to read	default
-L00020	4	a	det.a	det.a-1	det	a	1	(부정관사)	(indefinite article)	default
-L00020	5	book	n.book	n.book-1	n	book	1	책	book	default
-L00021	1	A	det.a	det.a-1	det	a	1	(부정관사)	(indefinite article)	default
-L00021	2	leaf	n.leaf	n.leaf-1	n	leaf	1	나뭇잎	leaf	default
-L00021	3	fell	v.fell	v.fall-1	v	fall	1	떨어지다	to fall	default
-L00021	4	into	prep.into	prep.into-1	prep	into	1	~안으로	into	default
-L00021	5	the	det.the	det.the-1	det	the	1	(정관사)	(definite article)	default
-L00021	6	sea	n.sea	n.sea-1	n	sea	1	바다	sea	default
-L00022	1	She	pron.she	pron.she-1	pron	she	1	그녀	she	default
-L00022	2	can	aux.can	aux.can-1	aux	can	1	~할 수 있다	can, be able to	default
-L00022	3	tie	v.tie	v.tie-1	v	tie	1	묶다	to tie	default
-L00022	4	a	det.a	det.a-1	det	a	1	(부정관사)	(indefinite article)	default
-L00022	5	bow	n.bow	n.bow-1	n	bow	1	리본, 나비매듭	ribbon, looped knot	default
-L00023	1	The	det.the	det.the-1	det	the	1	(정관사)	(definite article)	default
-L00023	2	actor	n.actor	n.actor-1	n	actor	1	배우	actor	default
-L00023	3	took	v.took	v.take-2	v	take	2	(동작을) 하다	to perform (an action)	context
-L00023	4	a	det.a	det.a-1	det	a	1	(부정관사)	(indefinite article)	default
-L00023	5	bow	n.bow	n.bow-2	n	bow	2	(고개 숙여 하는) 인사	a bending greeting	context
-L00024	1	to	prep.to	prep.to-1	prep	to	1	~에, ~로	to (direction)	default
-L00024	2	too	adv.too	adv.too-1	adv	too	1	~도, 또한	also	default
-L00024	3	two	num.two	num.two-1	num	two	1	둘	two	default
-L00025	1	I	pron.I	pron.I-1	pron	I	1	나	I, me	default
-L00025	2	go	v.go	v.go-1	v	go	1	가다	to go	default
-L00025	3	to	prep.to	prep.to-1	prep	to	1	~에, ~로	to (direction)	default
-L00025	4	the	det.the	det.the-1	det	the	1	(정관사)	(definite article)	default
-L00025	5	sea	n.sea	n.sea-1	n	sea	1	바다	sea	default
-L00026	1	I	pron.I	pron.I-1	pron	I	1	나	I, me	default
-L00026	2	have	v.have	v.have-1	v	have	1	가지다, 있다	to have	default
-L00026	3	two	num.two	num.two-1	num	two	1	둘	two	default
-L00026	4	cats	n.cats	n.cat-1	n	cat	1	고양이	cat	default
-L00026	5	too	adv.too	adv.too-1	adv	too	1	~도, 또한	also	default
-L00027	1	Tom	propn.Tom	propn.Tom-1	propn	Tom	1	(이름)	(name)	default
-L00027	2	ate	v.ate	v.eat-1	v	eat	1	먹다	to eat	default
-L00027	3	a	det.a	det.a-1	det	a	1	(부정관사)	(indefinite article)	default
-L00027	4	hot dog	n.hot dog	n.hot dog-1	n	hot dog	1	핫도그	hot dog	default
+word_id	line_id	lesson_id	seq	token	Token-a	a#	pronunciation	syl_cnt	aud_id	p.Token	p.Lemma-s	pos	lemma	s#	meaning_ko	meaning_en	inflection	hfw	target	add_target	sense_source	sound_source
+W00001	L00001	DEMO.A.U1L1	1	cat	cat-1	1	kæt	1	A00001	n.cat	n.cat-1	n	cat	1	고양이	cat		N	Y		default	default
+W00002	L00002	DEMO.A.U1L1	1	map	map-1	1	mæp	1	A00002	n.map	n.map-1	n	map	1	지도	map		N	Y		default	default
+W00003	L00003	DEMO.A.U1L1	1	bag	bag-1	1	bæg	1	A00003	n.bag	n.bag-1	n	bag	1	가방	bag		N	Y		default	default
+W00004	L00004	DEMO.A.U1L1	1	The	the-1	1	ðə	1	A00004	det.the	det.the-1	det	the	1	(정관사)	(definite article)		Y	N		default	default
+W00005	L00004	DEMO.A.U1L1	2	cat	cat-1	1	kæt	1	A00001	n.cat	n.cat-1	n	cat	1	고양이	cat		N	Y		default	default
+W00006	L00004	DEMO.A.U1L1	3	sat	sat-1	1	sæt	1	A00005	v.sat	v.sit-1	v	sit	1	앉다	to sit	past	N	Y		default	default
+W00007	L00004	DEMO.A.U1L1	4	on	on-1	1	ɑn	1	A00006	prep.on	prep.on-1	prep	on	1	~위에	on (top of)		N	N		default	default
+W00008	L00004	DEMO.A.U1L1	5	a	a-1	1	ə	1	A00007	det.a	det.a-1	det	a	1	(부정관사)	(indefinite article)		Y	N		default	default
+W00009	L00004	DEMO.A.U1L1	6	mat	mat-1	1	mæt	1	A00008	n.mat	n.mat-1	n	mat	1	매트	mat		N	Y		default	default
+W00010	L00005	DEMO.A.U1L1	1	Pam	pam-1	1	pæm	1	A00009	propn.Pam	propn.Pam-1	propn	Pam	1	(이름)	(name)		N	Y		default	default
+W00011	L00005	DEMO.A.U1L1	2	has	has-1	1	hæz	1	A00010	v.has	v.have-1	v	have	1	가지다, 있다	to have	third_person	N	Y		default	default
+W00012	L00005	DEMO.A.U1L1	3	a	a-1	1	ə	1	A00007	det.a	det.a-1	det	a	1	(부정관사)	(indefinite article)		Y	N		default	default
+W00013	L00005	DEMO.A.U1L1	4	red	red-1	1	rɛd	1	A00011	adj.red	adj.red-1	adj	red	1	빨간	red		N	N		default	default
+W00014	L00005	DEMO.A.U1L1	5	bag	bag-1	1	bæg	1	A00003	n.bag	n.bag-1	n	bag	1	가방	bag		N	Y		default	default
+W00015	L00006	DEMO.A.U1L2	1	pot	pot-1	1	pɑt	1	A00012	n.pot	n.pot-1	n	pot	1	냄비	pot		N	Y		default	default
+W00016	L00007	DEMO.A.U1L2	1	fox	fox-1	1	fɑks	1	A00013	n.fox	n.fox-1	n	fox	1	여우	fox		N	Y		default	default
+W00017	L00008	DEMO.A.U1L2	1	log	log-1	1	lɔg	1	A00014	n.log	n.log-1	n	log	1	통나무	log		N	Y		default	default
+W00018	L00009	DEMO.A.U1L2	1	The	the-1	1	ðə	1	A00004	det.the	det.the-1	det	the	1	(정관사)	(definite article)		Y	N		default	default
+W00019	L00009	DEMO.A.U1L2	2	fox	fox-1	1	fɑks	1	A00013	n.fox	n.fox-1	n	fox	1	여우	fox		N	Y		default	default
+W00020	L00009	DEMO.A.U1L2	3	is	is-1	1	ɪz	1	A00015	v.is	v.be-2	v	be	2	(어디에) 있다	to be (location)	third_person	Y	N		context	default
+W00021	L00009	DEMO.A.U1L2	4	on	on-1	1	ɑn	1	A00006	prep.on	prep.on-1	prep	on	1	~위에	on (top of)		N	N		default	default
+W00022	L00009	DEMO.A.U1L2	5	the	the-1	1	ðə	1	A00004	det.the	det.the-1	det	the	1	(정관사)	(definite article)		Y	N		default	default
+W00023	L00009	DEMO.A.U1L2	6	log	log-1	1	lɔg	1	A00014	n.log	n.log-1	n	log	1	통나무	log		N	Y		default	default
+W00024	L00010	DEMO.A.U1L2	1	Tom	tom-1	1	tɑm	1	A00016	propn.Tom	propn.Tom-1	propn	Tom	1	(이름)	(name)		N	Y		default	default
+W00025	L00010	DEMO.A.U1L2	2	got	got-1	1	gɑt	1	A00017	v.got	v.get-1	v	get	1	얻다, 구하다	to get	past	N	Y		default	default
+W00026	L00010	DEMO.A.U1L2	3	a	a-1	1	ə	1	A00007	det.a	det.a-1	det	a	1	(부정관사)	(indefinite article)		Y	N		default	default
+W00027	L00010	DEMO.A.U1L2	4	hot	hot-1	1	hɑt	1	A00018	adj.hot	adj.hot-1	adj	hot	1	뜨거운	hot		N	Y		default	default
+W00028	L00010	DEMO.A.U1L2	5	pot	pot-1	1	pɑt	1	A00012	n.pot	n.pot-1	n	pot	1	냄비	pot		N	Y		default	default
+W00029	L00011	DEMO.A.U2L1	1	ship	ship-1	1	ʃɪp	1	A00019	n.ship	n.ship-1	n	ship	1	배	ship		N	Y		default	default
+W00030	L00012	DEMO.A.U2L1	1	fish	fish-1	1	fɪʃ	1	A00020	n.fish	n.fish-1	n	fish	1	물고기	fish		N	Y		default	default
+W00031	L00013	DEMO.A.U2L1	1	She	she-1	1	ʃi	1	A00021	pron.she	pron.she-1	pron	she	1	그녀	she		Y	Y		default	default
+W00032	L00013	DEMO.A.U2L1	2	has	has-1	1	hæz	1	A00010	v.has	v.have-1	v	have	1	가지다, 있다	to have	third_person	N	N		default	default
+W00033	L00013	DEMO.A.U2L1	3	a	a-1	1	ə	1	A00007	det.a	det.a-1	det	a	1	(부정관사)	(indefinite article)		Y	N		default	default
+W00034	L00013	DEMO.A.U2L1	4	fish	fish-1	1	fɪʃ	1	A00020	n.fish	n.fish-1	n	fish	1	물고기	fish		N	Y		default	default
+W00035	L00013	DEMO.A.U2L1	5	in	in-1	1	ɪn	1	A00022	prep.in	prep.in-1	prep	in	1	~안에	inside		N	N		default	default
+W00036	L00013	DEMO.A.U2L1	6	a	a-1	1	ə	1	A00007	det.a	det.a-1	det	a	1	(부정관사)	(indefinite article)		Y	N		default	default
+W00037	L00013	DEMO.A.U2L1	7	dish	dish-1	1	dɪʃ	1	A00023	n.dish	n.dish-1	n	dish	1	접시	dish		N	Y		default	default
+W00038	L00014	DEMO.A.U2L1	1	The	the-1	1	ðə	1	A00004	det.the	det.the-1	det	the	1	(정관사)	(definite article)		Y	N		default	default
+W00039	L00014	DEMO.A.U2L1	2	ship	ship-1	1	ʃɪp	1	A00019	n.ship	n.ship-1	n	ship	1	배	ship		N	Y		default	default
+W00040	L00014	DEMO.A.U2L1	3	is	is-1	1	ɪz	1	A00015	v.is	v.be-2	v	be	2	(어디에) 있다	to be (location)	third_person	Y	N		context	default
+W00041	L00014	DEMO.A.U2L1	4	at	at-1	1	æt	1	A00024	prep.at	prep.at-1	prep	at	1	~에	at		N	N		default	default
+W00042	L00014	DEMO.A.U2L1	5	the	the-1	1	ðə	1	A00004	det.the	det.the-1	det	the	1	(정관사)	(definite article)		Y	N		default	default
+W00043	L00014	DEMO.A.U2L1	6	shop	shop-1	1	ʃɑp	1	A00025	n.shop	n.shop-1	n	shop	1	가게	shop		N	Y		default	default
+W00044	L00015	DEMO.A.U2L2	1	cats	cats-1	1	kæts	1	A00026	n.cats	n.cat-1	n	cat	1	고양이	cat	plural	N	Y	Y	default	default
+W00045	L00016	DEMO.A.U2L2	1	dogs	dogs-1	1	dɔgz	1	A00027	n.dogs	n.dog-1	n	dog	1	개	dog	plural	N	Y	N	default	default
+W00046	L00017	DEMO.A.U2L2	1	Two	two-1	1	tu	1	A00028	num.two	num.two-1	num	two	1	둘	two		N	N	N	default	default
+W00047	L00017	DEMO.A.U2L2	2	cats	cats-1	1	kæts	1	A00026	n.cats	n.cat-1	n	cat	1	고양이	cat	plural	N	Y	Y	default	default
+W00048	L00017	DEMO.A.U2L2	3	nap	nap-1	1	næp	1	A00029	v.nap	v.nap-1	v	nap	1	낮잠 자다	to nap		N	N	Y	default	default
+W00049	L00017	DEMO.A.U2L2	4	in	in-1	1	ɪn	1	A00022	prep.in	prep.in-2	prep	in	2	~에 (넓은 곳·자연)	in (open space, nature)		N	N	N	context	default
+W00050	L00017	DEMO.A.U2L2	5	the	the-1	1	ðə	1	A00004	det.the	det.the-1	det	the	1	(정관사)	(definite article)		Y	N	N	default	default
+W00051	L00017	DEMO.A.U2L2	6	sun	sun-1	1	sʌn	1	A00030	n.sun	n.sun-1	n	sun	1	해, 햇볕	sun, sunshine		N	N	N	default	default
+W00052	L00018	DEMO.A.U2L2	1	The	the-1	1	ðə	1	A00004	det.the	det.the-1	det	the	1	(정관사)	(definite article)		Y	N	N	default	default
+W00053	L00018	DEMO.A.U2L2	2	dogs	dogs-1	1	dɔgz	1	A00027	n.dogs	n.dog-1	n	dog	1	개	dog	plural	N	Y	N	default	default
+W00054	L00018	DEMO.A.U2L2	3	dig	dig-1	1	dɪg	1	A00031	v.dig	v.dig-1	v	dig	1	(땅을) 파다	to dig		N	N	N	default	default
+W00055	L00018	DEMO.A.U2L2	4	in	in-1	1	ɪn	1	A00022	prep.in	prep.in-2	prep	in	2	~에 (넓은 곳·자연)	in (open space, nature)		N	N	N	context	default
+W00056	L00018	DEMO.A.U2L2	5	the	the-1	1	ðə	1	A00004	det.the	det.the-1	det	the	1	(정관사)	(definite article)		Y	N	N	default	default
+W00057	L00018	DEMO.A.U2L2	6	mud	mud-1	1	mʌd	1	A00032	n.mud	n.mud-1	n	mud	1	진흙	mud		N	N	N	default	default
+W00058	L00019	DEMO.A.U3L1	1	I	i-1	1	aɪ	1	A00033	pron.I	pron.I-1	pron	I	1	나	I, me		Y	N		default	default
+W00059	L00019	DEMO.A.U3L1	2	read	read-1	1	rid	1	A00034	v.read	v.read-1	v	read	1	읽다	to read		N	Y		default	default
+W00060	L00019	DEMO.A.U3L1	3	a	a-1	1	ə	1	A00007	det.a	det.a-1	det	a	1	(부정관사)	(indefinite article)		Y	N		default	default
+W00061	L00019	DEMO.A.U3L1	4	book	book-1	1	bʊk	1	A00035	n.book	n.book-1	n	book	1	책	book		N	N		default	default
+W00062	L00019	DEMO.A.U3L1	5	every day	every day-1	1	ɛvrideɪ	3	A00036	adv.every day	adv.every day-1	adv	every day	1	매일	every day		N	N		default	default
+W00063	L00020	DEMO.A.U3L1	1	Yesterday	yesterday-1	1	jɛstərdeɪ	3	A00037	adv.yesterday	adv.yesterday-1	adv	yesterday	1	어제	yesterday		N	N		default	default
+W00064	L00020	DEMO.A.U3L1	2	I	i-1	1	aɪ	1	A00033	pron.I	pron.I-1	pron	I	1	나	I, me		Y	N		default	default
+W00065	L00020	DEMO.A.U3L1	3	read	read-2	2	rɛd	1	A00011	v.read	v.read-1	v	read	1	읽다	to read	past	N	N		default	position
+W00066	L00020	DEMO.A.U3L1	4	a	a-1	1	ə	1	A00007	det.a	det.a-1	det	a	1	(부정관사)	(indefinite article)		Y	N		default	default
+W00067	L00020	DEMO.A.U3L1	5	book	book-1	1	bʊk	1	A00035	n.book	n.book-1	n	book	1	책	book		N	N		default	default
+W00068	L00021	DEMO.A.U3L1	1	A	a-1	1	ə	1	A00007	det.a	det.a-1	det	a	1	(부정관사)	(indefinite article)		Y	N		default	default
+W00069	L00021	DEMO.A.U3L1	2	leaf	leaf-1	1	lif	1	A00038	n.leaf	n.leaf-1	n	leaf	1	나뭇잎	leaf		N	Y		default	default
+W00070	L00021	DEMO.A.U3L1	3	fell	fell-1	1	fɛl	1	A00039	v.fell	v.fall-1	v	fall	1	떨어지다	to fall	past	N	N		default	default
+W00071	L00021	DEMO.A.U3L1	4	into	into-1	1	ɪntu	2	A00040	prep.into	prep.into-1	prep	into	1	~안으로	into		N	N		default	default
+W00072	L00021	DEMO.A.U3L1	5	the	the-1	1	ðə	1	A00004	det.the	det.the-1	det	the	1	(정관사)	(definite article)		Y	N		default	default
+W00073	L00021	DEMO.A.U3L1	6	sea	sea-1	1	si	1	A00041	n.sea	n.sea-1	n	sea	1	바다	sea		N	Y		default	default
+W00074	L00022	DEMO.A.U3L1	1	She	she-1	1	ʃi	1	A00021	pron.she	pron.she-1	pron	she	1	그녀	she		Y	N		default	default
+W00075	L00022	DEMO.A.U3L1	2	can	can-1	1	kæn	1	A00042	aux.can	aux.can-1	aux	can	1	~할 수 있다	can, be able to		Y	N		default	default
+W00076	L00022	DEMO.A.U3L1	3	tie	tie-1	1	taɪ	1	A00043	v.tie	v.tie-1	v	tie	1	묶다	to tie		N	N		default	default
+W00077	L00022	DEMO.A.U3L1	4	a	a-1	1	ə	1	A00007	det.a	det.a-1	det	a	1	(부정관사)	(indefinite article)		Y	N		default	default
+W00078	L00022	DEMO.A.U3L1	5	bow	bow-1	1	boʊ	1	A00044	n.bow	n.bow-1	n	bow	1	리본, 나비매듭	ribbon, looped knot		N	N		default	default
+W00079	L00023	DEMO.A.U3L1	1	The	the-1	1	ðə	1	A00004	det.the	det.the-1	det	the	1	(정관사)	(definite article)		Y	N		default	default
+W00080	L00023	DEMO.A.U3L1	2	actor	actor-1	1	æktər	2	A00045	n.actor	n.actor-1	n	actor	1	배우	actor		N	N		default	default
+W00081	L00023	DEMO.A.U3L1	3	took	took-1	1	tʊk	1	A00046	v.took	v.take-2	v	take	2	(동작을) 하다	to perform (an action)	past	N	N		context	default
+W00082	L00023	DEMO.A.U3L1	4	a	a-1	1	ə	1	A00007	det.a	det.a-1	det	a	1	(부정관사)	(indefinite article)		Y	N		default	default
+W00083	L00023	DEMO.A.U3L1	5	bow	bow-2	2	baʊ	1	A00047	n.bow	n.bow-2	n	bow	2	(고개 숙여 하는) 인사	a bending greeting		N	N		context	sense
+W00084	L00024	DEMO.A.U3L2	1	to	to-1	1	tu	1	A00028	prep.to	prep.to-1	prep	to	1	~에, ~로	to (direction)		Y	Y		default	default
+W00085	L00024	DEMO.A.U3L2	2	too	too-1	1	tu	1	A00028	adv.too	adv.too-1	adv	too	1	~도, 또한	also		N	Y		default	default
+W00086	L00024	DEMO.A.U3L2	3	two	two-1	1	tu	1	A00028	num.two	num.two-1	num	two	1	둘	two		N	Y		default	default
+W00087	L00025	DEMO.A.U3L2	1	I	i-1	1	aɪ	1	A00033	pron.I	pron.I-1	pron	I	1	나	I, me		Y	N		default	default
+W00088	L00025	DEMO.A.U3L2	2	go	go-1	1	goʊ	1	A00048	v.go	v.go-1	v	go	1	가다	to go		Y	N		default	default
+W00089	L00025	DEMO.A.U3L2	3	to	to-1	1	tu	1	A00028	prep.to	prep.to-1	prep	to	1	~에, ~로	to (direction)		Y	Y		default	default
+W00090	L00025	DEMO.A.U3L2	4	the	the-1	1	ðə	1	A00004	det.the	det.the-1	det	the	1	(정관사)	(definite article)		Y	N		default	default
+W00091	L00025	DEMO.A.U3L2	5	sea	sea-1	1	si	1	A00041	n.sea	n.sea-1	n	sea	1	바다	sea		N	N		default	default
+W00092	L00026	DEMO.A.U3L2	1	I	i-1	1	aɪ	1	A00033	pron.I	pron.I-1	pron	I	1	나	I, me		Y	N		default	default
+W00093	L00026	DEMO.A.U3L2	2	have	have-1	1	hæv	1	A00049	v.have	v.have-1	v	have	1	가지다, 있다	to have		Y	N		default	default
+W00094	L00026	DEMO.A.U3L2	3	two	two-1	1	tu	1	A00028	num.two	num.two-1	num	two	1	둘	two		N	Y		default	default
+W00095	L00026	DEMO.A.U3L2	4	cats	cats-1	1	kæts	1	A00026	n.cats	n.cat-1	n	cat	1	고양이	cat	plural	N	N		default	default
+W00096	L00026	DEMO.A.U3L2	5	too	too-1	1	tu	1	A00028	adv.too	adv.too-1	adv	too	1	~도, 또한	also		N	Y		default	default
+W00097	L00027	DEMO.A.U1L2	1	Tom	tom-1	1	tɑm	1	A00016	propn.Tom	propn.Tom-1	propn	Tom	1	(이름)	(name)		N	Y		default	default
+W00098	L00027	DEMO.A.U1L2	2	ate	ate-1	1	eɪt	1	A00050	v.ate	v.eat-1	v	eat	1	먹다	to eat	past	N	N		default	default
+W00099	L00027	DEMO.A.U1L2	3	a	a-1	1	ə	1	A00007	det.a	det.a-1	det	a	1	(부정관사)	(indefinite article)		Y	N		default	default
+W00100	L00027	DEMO.A.U1L2	4	hot dog	hot dog-1	1	hɑtdɔg	2	A00051	n.hot dog	n.hot dog-1	n	hot dog	1	핫도그	hot dog		N	Y		default	default

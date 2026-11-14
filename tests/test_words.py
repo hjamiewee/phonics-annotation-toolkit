@@ -1,16 +1,16 @@
-"""Steps 2–3 end to end on the example data, plus the reproduction check."""
+"""Steps 2–3 (meaning axis) on the example data."""
 
 import shutil
 
 import pytest
 
-from phonics_toolkit.store import DATA_DIR, read_table
-from phonics_toolkit.words import SNAPSHOT, WORD_COLUMNS, build_words, sense_view
+from phonics_toolkit.store import DATA_DIR
+from phonics_toolkit.words import build_words, sense_view
 
 
 @pytest.fixture(scope="module")
 def build():
-    """Build the Word table once for all tests in this module."""
+    """Build the meaning axis once for all tests in this module."""
     return build_words()
 
 
@@ -23,17 +23,6 @@ def by_position(build, line_id, seq):
 def test_every_example_token_is_resolved(build):
     """The example data has a decision or default for every token."""
     assert build.unresolved == []
-
-
-def test_result_matches_the_snapshot(build):
-    """Reproduction check: any change in a judgment shows up as a snapshot diff.
-
-    After an intended change, review the diff and run
-    ``python -m phonics_toolkit.words --update-snapshot``.
-    """
-    # 기준 결과와 한 칸이라도 다르면 실패 — 의도한 변경이면 스냅샷을 새로 찍는다
-    expected = read_table(SNAPSHOT, required=WORD_COLUMNS)
-    assert build.rows == expected
 
 
 def test_read_has_one_sense_in_present_and_past(build):
