@@ -49,6 +49,8 @@ So each Word row is split into two keys, one per axis.
 
 See the [data model](docs/en/data_model.md) for details and the [glossary](docs/glossary.md) for terms.
 
+How ambiguous cases were judged, with the reasoning, is in [judgment criteria and boundary cases](docs/en/design_decisions.md). For example: why `in` differs in `in a dish` and `in the sun`, why `take a bow` is not merged as a phrase, and why a short-o lesson targets both /ɑ/ and /ɔ/.
+
 ## Pipeline
 
 | Step | What it does | Status |

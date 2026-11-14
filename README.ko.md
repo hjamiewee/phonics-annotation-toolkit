@@ -46,6 +46,8 @@
 
 자세한 내용은 [데이터 모델](docs/ko/data_model.md)에 있습니다. 용어는 [용어표](docs/glossary.md)를 참고하세요.
 
+애매한 사례를 어떻게 판정했는지는 [판정 기준과 경계 사례](docs/ko/design_decisions.md)에 근거와 함께 정리했습니다. 예: `in a dish`와 `in the sun`의 `in`을 나눈 이유, `take a bow`를 구로 묶지 않은 이유, 짧은 o 레슨에 /ɑ/와 /ɔ/를 함께 넣은 이유.
+
 ## 처리 단계
 
 | 단계 | 하는 일 | 상태 |
