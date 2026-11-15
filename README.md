@@ -7,6 +7,15 @@ An annotation pipeline for phonics textbook passages. It shows two things:
 - **An automated workflow from data to assets.** One command takes passage lines and human decision files and produces the full annotated word table, lesson-target flags, and audio and image asset lists, with every judgment traceable and reproducible.
 - **A two-axis data model.** Each word is split into a **Token axis** (how it sounds) that drives **audio assets**, and a **Lemma axis** (what it means) that drives **image assets**.
 
+| | Real project (at work) | This repository |
+|---|---|---|
+| Scope | 2 textbook series, 3 levels | 6 example lessons |
+| Word occurrences | ~52,000 | 100 (27 lines) |
+| Context sense judgments | ~33,000 | 6 |
+| Sound keys | ~5,400 | 54 |
+| Period | 4 months | — |
+| Data | — | Written for this repository to exercise the same cases: words that split across the two axes, and boundary cases |
+
 > This repository is a demo **written from scratch**, based on my experience designing and running
 > a corpus-building project at work. It contains no real textbook text, company code, or company data.
 > Every example sentence was written for this repository.
@@ -20,10 +29,9 @@ To digitize that content, every word in every passage needs answers to three que
 - **What does the word mean?** Part of speech, lemma, sense number, illustration
 - **Is the word a target of this lesson?** Does it match the GPCs, word forms, or word relations the lesson teaches?
 
-At work, this design handled **about 52,000 word occurrences** across two textbook series and three levels over four months.
-About **33,000 context-level sense judgments** were kept in decision files and applied reproducibly,
-and lesson-target flags, frozen sound numbers (**about 5,400 sound keys**), and asset lists were generated automatically for every row.
-This repository reproduces that data model and workflow on a small example dataset.
+In the real project, context-level sense judgments were kept in decision files and applied reproducibly,
+and lesson-target flags, frozen sound numbers, and asset lists were generated automatically for every row.
+This repository reproduces that data model and workflow on a small example dataset (scale in the table above).
 
 ## How it works
 
